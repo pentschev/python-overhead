@@ -1,3 +1,8 @@
+# C++ binaries
+cpp/time_extern
+cpp/time_inline
+cpp/*.s
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
