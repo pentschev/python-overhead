@@ -3,6 +3,9 @@ cpp/time_extern
 cpp/time_inline
 cpp/*.s
 
+# CUDA binaries
+cuda/time_kernel_launch
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
