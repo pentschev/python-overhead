@@ -75,6 +75,10 @@ Python provides a variety of ways to write code as well as providing concurrency
 1. `python/python-async.py`: measures runtime of asynchronous Python coroutines;
 1. `python/python-asyncio-task.py`: measures runtime of `asyncio` Python tasks;
 
+## CUDA
+
+Although generally quick given the amount of work a single CUDA kernel generally performs, launching kernels has also a cost, thus a sample `cuda/time_kernel_launch` is included to measure runtime of kernel launches.
+
 ## Running
 
 A script to measure all runtimes is provided for convenience. It will build C++ binaries and run them, followed by running the Python scripts. A sample output is provided below:
@@ -96,6 +100,15 @@ Measuring Python function call runtimes
 Python (sync) total [average] runtime for 1000000 iterations: 0.05027089104987681s [50.27089104987681ns]
 Python (async coroutine) total [average] runtime for 1000000 iterations: 0.14029409503564239s [140.29409503564239ns]
 Python (asyncio task) total [average] runtime for 1000000 iterations: 11.196780956001021s [11196.780956001021ns]
+
+Cleaning CUDA binaries and rebuilding
+rm -f time_kernel_launch
+nvcc  time_kernel_launch.cu -o time_kernel_launch
+
+Measuring CUDA kernel launch runtimes
+CUDA kernel launch total [average] runtime for 1000000 iterations: 2.20963s [2209.63ns]
 ```
 
 Note that we passed `1000000` as argument for `run_all.sh`, that indicates the number of iterations we want to measure runtimes for, if omitted it defaults to `1000000`.
+
+The `run_all.sh` script has also flags to skip the individual test families, please run `./run_all.sh --help` to see the correct options.
