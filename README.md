@@ -92,14 +92,16 @@ g++ -shared -o libnoop.so noop.cpp
 g++ -fPIC -Wall -Wextra -DEXTERN -L/datasets/pentschev/src/python-overhead/cpp -lnoop -Wl,-rpath,/datasets/pentschev/src/python-overhead/cpp time.cpp -o time_extern
 g++ -fPIC -Wall -Wextra time.cpp -o time_inline
 
-Measuing C++ function call runtimes
-C++ (externally linked) total [average] runtime for 1000000 iterations: 0.001719s [1.719ns]
-C++ (inlined) total [average] runtime for 1000000 iterations: 0.002113s [2.113ns]
+Measuring C++ function call runtimes
+C++ (externally linked) total [average] runtime for 1000000 iterations: 0.001975s [1.975ns]
+C++ (inlined) total [average] runtime for 1000000 iterations: 0.002149s [2.149ns]
 
 Measuring Python function call runtimes
-Python (sync) total [average] runtime for 1000000 iterations: 0.05027089104987681s [50.27089104987681ns]
-Python (async coroutine) total [average] runtime for 1000000 iterations: 0.14029409503564239s [140.29409503564239ns]
-Python (asyncio task) total [average] runtime for 1000000 iterations: 11.196780956001021s [11196.780956001021ns]
+Python (sync) total [average] runtime for 1000000 iterations: 0.05136413965374231s [51.36413965374231ns]
+Python (async coroutine) total [average] runtime for 1000000 iterations: 0.13169546704739332s [131.69546704739332ns]
+Python (async coroutine) total [average] runtime for 1000000 iterations: 0.13246881309896708s [132.46881309896708ns]
+Python (asyncio task) total [average] runtime for 1000000 iterations: 9.685273353010416s [9685.273353010416ns]
+Python (uvloop task) total [average] runtime for 1000000 iterations: 3.9662010883912444s [3966.2010883912444ns]
 
 Cleaning CUDA binaries and rebuilding
 rm -f time_kernel_launch
