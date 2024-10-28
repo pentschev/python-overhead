@@ -4,6 +4,13 @@ import sys
 import timeit
 
 
+try:
+    import uvloop
+except ImportError:
+    print("uvloop is not installed, skipping...")
+    sys.exit(0)
+
+
 async def noop():
     pass
 
@@ -27,7 +34,7 @@ async def cpu_task():
     total = t1 - t0
     average_ns = ((t1 - t0) / iterations) * 1e9
 
-    print(f"Python (asyncio task) total [average] runtime for {iterations} iterations: {t1-t0}s [{average_ns}ns]")
+    print(f"Python (uvloop task) total [average] runtime for {iterations} iterations: {t1-t0}s [{average_ns}ns]")
 
 
-asyncio.new_event_loop().run_until_complete(cpu_task())
+uvloop.new_event_loop().run_until_complete(cpu_task())

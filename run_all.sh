@@ -61,8 +61,10 @@ fi
 if [[ $RUN_PYTHON -ne 0 ]]; then
   echo -e "\n\e[1mMeasuring Python function call runtimes\e[0m"
   python python/time-sync.py ${ITERATIONS}
-  python python/time-async.py ${ITERATIONS}
+  python python/time-asyncio.py ${ITERATIONS}
+  python python/time-uvloop.py ${ITERATIONS}
   python python/time-asyncio-task.py ${ITERATIONS}
+  python python/time-uvloop-task.py ${ITERATIONS}
 else
   echo -e "\n\e[1mSkipping Python runtimes\e[0m"
 fi
