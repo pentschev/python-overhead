@@ -63,6 +63,8 @@ if [[ $RUN_PYTHON -ne 0 ]]; then
   python python/time-sync.py ${ITERATIONS}
   python python/time-asyncio.py ${ITERATIONS}
   python python/time-uvloop.py ${ITERATIONS}
+  python python/time-asyncio-future.py ${ITERATIONS}
+  python python/time-uvloop-future.py ${ITERATIONS}
   python python/time-asyncio-task.py ${ITERATIONS}
   python python/time-uvloop-task.py ${ITERATIONS}
 else
