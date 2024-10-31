@@ -100,6 +100,8 @@ Measuring Python function call runtimes
 Python (sync) total [average] runtime for 1000000 iterations: 0.05136413965374231s [51.36413965374231ns]
 Python (async coroutine) total [average] runtime for 1000000 iterations: 0.13169546704739332s [131.69546704739332ns]
 Python (async coroutine) total [average] runtime for 1000000 iterations: 0.13246881309896708s [132.46881309896708ns]
+Python (asyncio coroutine with future) total [average] runtime for 1000000 iterations: 0.6062590759247541s [606.2590759247541ns]
+Python (uvloop coroutine with future) total [average] runtime for 1000000 iterations: 0.4856810048222542s [485.6810048222541ns]
 Python (asyncio task) total [average] runtime for 1000000 iterations: 9.685273353010416s [9685.273353010416ns]
 Python (uvloop task) total [average] runtime for 1000000 iterations: 3.9662010883912444s [3966.2010883912444ns]
 
